@@ -1,6 +1,13 @@
-.header-logo {            
-    float: left;            
-    font-size: 36px;      
+body {
+    margin : 0px;
+    padding :0px;
+
+}
+
+
+.header-logo {
+    float: left;
+    font-size: 36px;
     padding: 20px 40px;
  }
 .header-list {
@@ -8,11 +15,15 @@
     padding: 20px;
 }
 .header-list button {
-    font-size: 15px;    
+    font-size: 15px;
 }
 .header {
     background-color: #CCFFFF;
     height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+
 }
 .random-button button {
     font-size :24px;
