@@ -23,18 +23,10 @@ const createMeal = () => {
             throw new Error('error');
         } ;
         console.log('create ok');
-        //return response.json();
-        // var jss = Object.entries(js);
-         //console.log(js);
-        // var jsss = Object.entries(js)
-        // console.log(jsss);
-        // var json = JSON.stringify(js);
-        // console.log(json);
-
-    }).then((jss)  => {
-       // window.location.href = url + 'meals/'+ jss  ;
-        console.log(jss)
-    }).catch((error) => {
+        return response.json();
+    }).then((response)  => {
+       window.location.href = url + 'meals/'+ response["meal_id"]  ;
+    }).catch((response) => {
         console.log(error);
     });
 };

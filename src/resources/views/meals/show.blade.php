@@ -25,7 +25,7 @@
         　</form>
     　     <div class="meal-name">
            <h2>料理名</h2>
-           <p>{{$meal->name}}</p>
+           <p></p>
           </div>
             
           <div class="meal-Ingredients_Memo">
