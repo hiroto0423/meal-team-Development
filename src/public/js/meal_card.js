@@ -23,7 +23,7 @@ const createMeal = () => {
             throw new Error('error');
         } ;
         console.log('create ok');
-        return response.json();
+        //return response.json();
         // var jss = Object.entries(js);
          //console.log(js);
         // var jsss = Object.entries(js)
