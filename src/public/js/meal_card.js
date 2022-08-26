@@ -1,7 +1,7 @@
 //const postMeal = document.querySelector('.postmeal');
 const postBtn = document.getElementById('meal_create');
 console.log(postBtn);
-const url = 'https://df46868aaaa54b4da23f01cefe02aef9.vfs.cloud9.us-east-1.amazonaws.com/';
+const url = 'http://localhost:9000/';
 const endpoint = 'api/testpost';
 const endpoint_mealcreate ='api/mealpost';
 const endpoint_mealread ='api/mealread';
@@ -24,17 +24,9 @@ const createMeal = () => {
         } ;
         console.log('create ok');
         return response.json();
-        // var jss = Object.entries(js);
-         //console.log(js);
-        // var jsss = Object.entries(js)
-        // console.log(jsss);
-        // var json = JSON.stringify(js);
-        // console.log(json);
-
-    }).then((jss)  => {
-       // window.location.href = url + 'meals/'+ jss  ;
-        console.log(jss)
-    }).catch((error) => {
+    }).then((response)  => {
+       window.location.href = url + 'meals/'+ response["meal_id"]  ;
+    }).catch((response) => {
         console.log(error);
     });
 };
