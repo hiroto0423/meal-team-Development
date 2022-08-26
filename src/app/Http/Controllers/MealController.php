@@ -6,35 +6,36 @@ use Illuminate\Http\Request;
 use App\Meal;
 use DB;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\MealCreate;
 
 class MealController extends Controller
 {
-    public function mealpost (Request $request,Meal $meal) {
-        $input = $request;
-       //Log::debug($request);
-         $meal -> create([
-            'name' => $request->名前,
-            //'img' =>123,
-            'Ingredients_Memo' => $request ->メモ,
-            'way' => $request ->作り方,
-            'cost' => $request ->コスト,
-            //'categoly_id' => 1,
-            'diffyculty' =>$request -> 難易度,
-            'satiety' => $request -> 満足度
-        ]);
+    public function mealpost (Mealcreate $request,Meal $meal) {
+        $validated = $request->validated();
+        Log::debug($validated);
 
-        $item = DB::table('meals')->where('name', $request->name)->get();
-        
-        
+        // インサートと同時にIDを取得する
+         $id = DB::table('meals')->insertGetId([
+            'name' => $validated["名前"],
+            //'img' =>123,
+            'Ingredients_Memo' => $validated["メモ"],
+            'way' => $validated["作り方"],
+            'cost' => $validated["コスト"],
+            //'categoly_id' => 1,
+            'difficulty' =>$validated["難易度"],
+            'satiety' => $validated["満足度"]            
+        ]);
+       // Log::debug($id);
         $array = [
-            'tokyo' => 3
+            'meal_id' => $id
         ];
        //echo json_encode($array);
-       //return response()->json($array);
+       return response()->json($array);
     }
 
-    
-    public function show (Meal $meal){
-        return view('meals/show',compact('meal'));
+    public function show(){
+        return view('meals/show');
     }
+    
+
 }

@@ -15,14 +15,14 @@ class CreateMealsTable extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',50);
+            $table->string('name',50)->unique();
             //$table->binary('img');
-            $table->string('Ingredients_Memo',200)->nullable();
-            $table->string('way',500)->nullable();
-            $table->integer('cost')->nullable();
+            $table->string('Ingredients_Memo',200);
+            $table->string('way',500);
+            $table->integer('cost');
             //$table->integer('categoly_id')->unsigned();
-            $table->string('difficulty')->nullable();
-            $table->string('satiety')->nullable();
+            $table->string('difficulty');
+            $table->string('satiety');
             $table->timestamps();
         });
     }
