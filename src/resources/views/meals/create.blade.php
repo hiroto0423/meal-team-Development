@@ -19,34 +19,33 @@
         <div class="meal-register">
           <form action="/register"method="POST"id='form'>
             <h1>料理登録</h1>
+
+            <h2>写真を登録する</h2>
+            <div style="text-align:center">
+              <form action="index.php" method="post" enctype="multipart/form-data" >
+              <label>
+                <input class="sentaku" type="file" name="image" accept="image/*" >写真を選択
+              </label>
+            </div>
+
             <div class="meal-name">
-               <h2>写真を登録する</h2>
-               <div style="text-align:center">
-                <form action="index.php" method="post" enctype="multipart/form-data" >
-                <label><input class="sentaku" type="file" name="image" accept="image/*" >写真を選択</label>
-                <br>
-                <br>
-                <input type="submit" value="送信">
-                </div>
-
-
               <h2>料理名</h2>
-              <input type="text"placeholder="オムライス"name="名前">
+              <input type="text" placeholder="オムライス" name="名前" id="inputMealName">
             </div>
 
             <div class="meal-Ingredients_Memo">
               <h2>材料メモ</h2>
-              <textarea  type="text"placeholder="・卵二個・牛乳"name="メモ"></textarea>
+              <textarea type="text" placeholder="卵二個・牛乳" name="メモ" id="inputIngredients"></textarea>
             </div>
 
             <div class="meal-way">
               <h2>作り方</h2>
-              <input type="text"placeholder="卵を割って～～～"name='作り方'>
+              <input type="text" placeholder="卵を割って～～～" name='作り方' id="inputWay">
             </div>
 
             <div class="meal-cost">
               <h2>コスト</h2>
-              <input type="number"placeholder="500円"name='コスト'>
+              <input type="number" placeholder="500円" name='コスト' id="inputCost">
             </div>
 
             <div clas="meal-diffyculty">
@@ -68,6 +67,7 @@
           </form>
         </div>
       </div>
+      <script src="js/front_form_validation.js"></script>
       <script src="js/meal_card.js"></script>
     </body>
 </html>
