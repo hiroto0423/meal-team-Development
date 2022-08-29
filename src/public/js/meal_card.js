@@ -2,9 +2,9 @@
 const postBtn = document.getElementById('meal_create');
 console.log(postBtn);
 const url = 'http://localhost:9000/';
-const endpoint = 'api/testpost';
+
 const endpoint_mealcreate ='api/mealpost';
-const endpoint_mealread ='api/mealread';
+
 
 const createMeal = () => {
     const f1 = document.getElementById('form');
@@ -34,12 +34,7 @@ const createMeal = () => {
 postBtn.addEventListener('click', createMeal, false);
 
 
-const readMeal = () => {
-    
-    fetch(url+endpoint_mealread, {
-        
-    })
-}
+
 
 
 

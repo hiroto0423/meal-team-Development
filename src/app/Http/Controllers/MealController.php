@@ -33,8 +33,12 @@ class MealController extends Controller
        return response()->json($array);
     }
 
-    public function show(){
-        return view('meals/show');
+    public function mealread(Request $request){
+        Log::debug($request);
+        Log::debug($request[0]);
+        $item = \App\Meal::find($request[0]);
+        Log::debug($item);
+        return response()->json($item);
     }
     
 
