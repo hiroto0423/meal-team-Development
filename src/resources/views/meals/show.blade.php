@@ -28,9 +28,9 @@
            <p>{{$meal->name}}</p>
           </div>
 
-          <textarea class="meal-Ingredients_Memo">
+          <div class="meal-Ingredients_Memo">
             <h2>材料メモ</h2>
-          </textarea>
+          </div>
 
             <div class="meal-way">
               <h2>作り方</h2>
