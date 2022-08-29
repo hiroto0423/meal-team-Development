@@ -49,12 +49,14 @@
               <input type="number"placeholder="500円"name='コスト'>
             </div>
 
-            <!--<div class="meal-categoly">
-              <h2>カテゴリー</h2>
-              <select class="select-categoly">
-                <option>選択してください</option>
-            　</select>
-            </div>-->
+            <!--
+                <div class="meal-categoly">
+                    <h2>カテゴリー</h2>
+                    <select class="select-categoly">
+                        <option>選択してください</option>
+            　       </select>
+                </div>
+             -->
 
             <div clas="meal-diffyculty">
               <h2>難易度</h2>
