@@ -1,18 +1,16 @@
 const url = 'http://localhost:9000/';
-const endpoint_mealread ='api/mealread';
+const endpoint_mealread ='api/mealread/';
+var result = location.href.split('/');
+var id = result[result.length - 1];    
 
 window.onload = function() {
-    console.log( 'Hello World' );
-    var result = location.href.split('/');
-    var id = result[result.length - 1];
-    console.log(id);
-    
-        fetch(url+endpoint_mealread, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(id)
+        fetch(url+endpoint_mealread + id , {
+            method: 'GET',
+            // method: 'POST',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            // body: JSON.stringify(id)
         }).then((response) => {
             if(!response.ok) {
                 console.log('Read error!');
@@ -28,10 +26,7 @@ window.onload = function() {
             var meal_cost = response['cost']
             var meal_satiety = response['satiety']
             var meal_difficulty = response['difficulty']
-
-           console.log(meal_name);
-
-            //HTMLファイルのIDを変数として取得
+            //Element オブジェクトを取得
             var meal_read_name = document.getElementById('meal_name');
             var meal_read_Ingredients_Memo = document.getElementById('meal_Ingredients_Memo');
             var meal_read_way = document.getElementById('meal_way');
@@ -46,7 +41,8 @@ window.onload = function() {
             meal_read_satiety.innerHTML = meal_satiety;
             meal_read_difficulty.innerHTML = meal_difficulty;                
 
-        }).catch((response) => {
+        }).catch((error) => {
+            window.location.href = url + 'register' ;
             console.log(error);
         });
 

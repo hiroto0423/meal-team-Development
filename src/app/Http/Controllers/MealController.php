@@ -12,8 +12,6 @@ class MealController extends Controller
 {
     public function mealpost (Mealcreate $request,Meal $meal) {
         $validated = $request->validated();
-        Log::debug($validated);
-
         // インサートと同時にIDを取得する
          $id = DB::table('meals')->insertGetId([
             'name' => $validated["名前"],
@@ -25,19 +23,14 @@ class MealController extends Controller
             'difficulty' =>$validated["難易度"],
             'satiety' => $validated["満足度"]            
         ]);
-       // Log::debug($id);
         $array = [
             'meal_id' => $id
         ];
-       //echo json_encode($array);
        return response()->json($array);
     }
 
     public function mealread(Request $request){
-        Log::debug($request);
-        Log::debug($request[0]);
         $item = \App\Meal::find($request[0]);
-        Log::debug($item);
         return response()->json($item);
     }
     
