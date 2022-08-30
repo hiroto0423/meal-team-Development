@@ -18,19 +18,19 @@
 
     <div class="meal-wrapper">
         <div class="name-block">
-            <p class="meal-name">チキンステーキ</p>
+            <p class="meal-name" id="meal_name"></p>
             <div class="infomation">
                 <div class="cost orange_column">
                     <p>コスト</p>
-                    <p id="">500円</p>
+                    <p id="meal_cost"></p>
                 </div>
                 <div class="satiety orange_column">
                     <p>満腹度</p>
-                    <p id="">がっつり</p>
+                    <p id="meal_satiety"></p>
                 </div>
                 <div class="diffyculty orange_column">
                     <p>難易度</p>
-                    <p id="">レベル2</p>
+                    <p id="meal_difficulty"></p>
                 </div>
             </div>
         </div>
@@ -38,11 +38,10 @@
             <img class="ao" src="/image/chicken.png" alt="" width="440" height="440">
             <div class="memonoNakami">
                 <h2>材料メモ</h2>
-                <p id="">ここに材料メモが入る</p>
+                <p id="meal_Ingredients_Memo"></p>
                 <h2>作り方</h2>
-                <p id="">ここに作り方が入る</p>
+                <p id="meal_way"></p>
             </div>
         </div>
     </div>
 </body>
-</html>
