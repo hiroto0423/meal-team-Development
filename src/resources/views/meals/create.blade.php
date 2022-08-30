@@ -17,7 +17,7 @@
     　</div>
       <div class="main">
         <div class="meal-register">
-          <form action="/register"method="POST"id='form'>
+          <form action="/register" method="POST" id='form' name="meal_form">
             <h1>料理登録</h1>
 
             <h2>写真を登録する</h2>
@@ -30,22 +30,22 @@
 
             <div class="meal-name">
               <h2>料理名</h2>
-              <input type="text" placeholder="オムライス" name="名前" id="inputMealName">
+              <input type="text" placeholder="オムライス" name="meal_name">
             </div>
 
             <div class="meal-Ingredients_Memo">
               <h2>材料メモ</h2>
-              <textarea type="text" placeholder="卵二個・牛乳" name="メモ" id="inputIngredients"></textarea>
+              <textarea type="text" placeholder="卵二個・牛乳" name="meal_ingredients"></textarea>
             </div>
 
             <div class="meal-way">
               <h2>作り方</h2>
-              <input type="text" placeholder="卵を割って～～～" name='作り方' id="inputWay">
+              <input type="text" placeholder="卵を割って～～～" name="meal_way">
             </div>
 
             <div class="meal-cost">
               <h2>コスト</h2>
-              <input type="number" placeholder="500円" name='コスト' id="inputCost">
+              <input type="number" placeholder="500" name="meal_cost">
             </div>
 
             <div clas="meal-diffyculty">
@@ -63,7 +63,7 @@
 
             </div>
 
-            <input type="button" value="登録する" class="postBtn"id="meal_create">
+            <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
           </form>
         </div>
       </div>
