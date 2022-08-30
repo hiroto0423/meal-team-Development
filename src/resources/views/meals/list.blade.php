@@ -17,7 +17,7 @@
     　</div>
     　<div class="main">
     　   <h1>レシピ一覧</h1>
-    　  <div id="addTextBox"></div>
+    　  <div id="addlistBox"></div>
       </div>
       
       <div class="footer">
