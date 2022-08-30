@@ -37,5 +37,8 @@ class MealController extends Controller
         return view('meals/show');
     }
     
-
+    public function mealindex(){
+        $items = DB::table('meals')->get();
+        return response()->json($items);
+    }
 }

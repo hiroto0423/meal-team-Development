@@ -17,10 +17,12 @@
     　</div>
     　<div class="main">
     　   <h1>レシピ一覧</h1>
-    　  </div>
+    　  <div id="addTextBox"></div>
       </div>
+      
       <div class="footer">
           
       </div>
+      <script src="js/meal_index.js"></script>
     </body>
 </html>

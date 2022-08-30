@@ -25,3 +25,5 @@ Route::get('testget', function(){
 });
 
 Route::post('mealpost' ,'MealController@mealpost');
+
+Route::get('mealindex','MealController@mealindex');
