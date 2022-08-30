@@ -9,7 +9,7 @@ body {
     float: left;
     font-size: 36px;
     padding: 20px 40px;
- }
+}
 .header-list {
     float: right;
     padding: 20px;
@@ -24,6 +24,13 @@ body {
     position: fixed;
     top: 0px;
 }
+
+/* register */
+
+.main {
+  margin-top: 100px;
+}
+
 .random-button button {
     font-size :24px;
 
@@ -39,12 +46,7 @@ body {
 .meal-register {
     text-align:center;
 }
-label {
-    padding: 10px 40px;
-    color: #ffffff;
-    background-color:#E5E5E5;
-    cursor: pointer;
-}
+
 .sentaku {
 display: none;
 }
@@ -70,9 +72,7 @@ display: none;
     top:6px;
     box-shadow:none;
     margin:50px;
-    background-color:;
     width : 150px;
     height: 50px;
     font-weight: bold;
 }
-

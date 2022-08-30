@@ -7,67 +7,61 @@
         <link rel="stylesheet" href="/css/style.css" >
     </head>
     <body>
-    　<div class="header">
-    　　<div class="header-logo">男の自炊アプリ</div>
-    　　<div class="header-list">
-　　      <button><a href="/register">レシピ登録</a></button>
-　　      <button><a href="/meals">料理一覧</a></button>
-　　      <button><a href="/categoly">カテゴリー</a></button>
-    　　</div>
-    　</div>
+      <div class="header">
+        <div class="header-logo">男の自炊アプリ</div>
+      <div class="header-list">
+          <button><a href="/register">レシピ登録</a></button>
+          <button><a href="/meals">料理一覧</a></button>
+          <button><a href="/categoly">カテゴリー</a></button>
+      </div>
+    </div>
       <div class="main">
         <div class="meal-register">
-          <form action="/register"method="POST"id='form'>
+          <form action="/register" method="POST" id='form' name="meal_form">
             <h1>料理登録</h1>
+
+            <!-- 画像投稿機能は後ほど実装します -->
+
             <div class="meal-name">
-               <h2>写真を登録する</h2>
-               <div style="text-align:center">
-                <form action="index.php" method="post" enctype="multipart/form-data" >
-                <label><input class="sentaku" type="file" name="image" accept="image/*" >写真を選択</label>
-                <br>
-                <br>
-                <input type="submit" value="送信">
-                </div>
-
-
-              <h2>料理名</h2>
-              <input type="text"placeholder="オムライス"name="名前">
+              <label>料理名</label>
+              <input type="text" placeholder="オムライス" name="meal_name">
             </div>
 
             <div class="meal-Ingredients_Memo">
-              <h2>材料メモ</h2>
-              <textarea  type="text"placeholder="・卵二個・牛乳"name="メモ"></textarea>
+              <label>材料メモ</label>
+              <textarea type="text" placeholder="卵二個・牛乳" name="meal_ingredients"></textarea>
             </div>
 
             <div class="meal-way">
-              <h2>作り方</h2>
-              <input type="text"placeholder="卵を割って～～～"name='作り方'>
+              <label>作り方</label>
+              <textarea placeholder="卵を割って～～～" name="meal_way"></textarea>
             </div>
 
             <div class="meal-cost">
-              <h2>コスト</h2>
-              <input type="number"placeholder="500円"name='コスト'>
+              <label>コスト</label>
+              <input type="number" placeholder="500" name="meal_cost">
             </div>
 
-            <div clas="meal-diffyculty">
-              <h2>難易度</h2>
+            <div class="meal-diffyculty">
+              <label>難易度</label>
               <input type="radio"name="難易度"value=1 checked> レベル1
               <input type="radio"name="難易度"value=2> レベル２
               <input type="radio"name="難易度"value=3> レベル3
             </div>
 
             <div class="meal-satiety">
-              <h2>満腹度</h2>
+              <label>満腹度</label>
               <input type="radio"name="満足度"value=1 checked> ちょっと食べたい
               <input type="radio"name="満足度"value=2> ちょうどいい
               <input type="radio"name="満足度"value=3> がっつり
 
             </div>
 
-            <input type="button" value="登録する" class="postBtn"id="meal_create">
+            <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
           </form>
         </div>
       </div>
+      <script src="js/front_form_validation.js"></script>
       <script src="js/meal_card.js"></script>
     </body>
 </html>
