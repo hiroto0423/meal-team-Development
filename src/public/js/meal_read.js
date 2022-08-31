@@ -1,10 +1,11 @@
 const url = 'http://localhost:9000/';
-const endpoint_mealread ='api/mealread/';
-var result = location.href.split('/');
-var id = result[result.length - 1];    
+const endpoint_mealread ='api/meal/';
+
 
 window.onload = function() {
-        fetch(url+endpoint_mealread + id , {
+    var result = location.href.split('/');
+    var id = result[result.length - 1];    
+        fetch(url+endpoint_mealread + id, {
             method: 'GET',
             // method: 'POST',
             // headers: {
@@ -19,7 +20,7 @@ window.onload = function() {
             console.log('read ok');
             return response.json();
         }).then((response)  => {
-            //responseで返ってきたDBのレコードデータを変数として取得
+            //responseで返ってきたDBのレコードデータを取得
             var meal_name = response['name']
             var meal_Ingredients_Memo = response['Ingredients_Memo']
             var meal_way = response['way']
@@ -42,8 +43,8 @@ window.onload = function() {
             meal_read_difficulty.innerHTML = meal_difficulty;                
 
         }).catch((error) => {
-            window.location.href = url + 'register' ;
             console.log(error);
+            window.location.href = url + 'register' ;
         });
 
    

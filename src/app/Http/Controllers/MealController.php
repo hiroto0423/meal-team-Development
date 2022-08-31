@@ -29,9 +29,10 @@ class MealController extends Controller
        return response()->json($array);
     }
 
-    public function mealread(Request $request){
-        $item = \App\Meal::find($request[0]);
-        return response()->json($item);
+    public function mealread(Meal $meal){
+        $meal_id = $meal->id;
+        $item = \App\Meal::find($meal_id);
+         return response()->json($item);
     }
     
 
