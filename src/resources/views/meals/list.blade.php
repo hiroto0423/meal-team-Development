@@ -18,16 +18,7 @@
     <div class="main">
       <h1>レシピ一覧</h1>
       <div class="index-container" id="addListBox">
-
-        <div class="item-wrapper">
-          <div class="image-wrapper">
-            <div class="tmp-image">ここに画像が入る</div>
-          </div>
-          <div class="meal-name-block">
-            <a href="#" class="tmp-name" id="meal_url">料理名</a>
-          </div>
-        </div>
-
+        <!-- ここにjs/meal_index.jsでfetchした料理一覧のデータが入る -->
       </div>
     </div>
       <script src="js/meal_index.js"></script>
