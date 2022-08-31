@@ -1,67 +1,37 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <meta charset="utf-8">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css" >
-  </head>
-  <body>
-    <div class="header">
-      <div class="header-logo">男の自炊アプリ</div>
-    <div class="header-list">
-      <button><a href="/register">レシピ登録</a></button>
-      <button><a href="/meals">料理一覧</a></button>
-      <button><a href="/categoly">カテゴリー</a></button>
-    </div>
-  </div>
-    <div class="main">
-      <div class="meal-register">
-        <form action="/register" method="POST" id='form' name="meal_form">
-
-          <h1>料理登録</h1>
-          <!-- 画像投稿機能は後ほど実装します -->
-
-          <div class="meal-name">
-            <label>料理名</label>
-            <input type="text" placeholder="オムライス" name="meal_name">
-          </div>
-
-          <div class="meal-Ingredients_Memo">
-            <label>材料メモ</label>
-            <textarea type="text" placeholder="卵二個・牛乳" name="meal_ingredients"></textarea>
-          </div>
-
-          <div class="meal-way">
-            <label>作り方</label>
-            <textarea placeholder="卵を割って～～～" name="meal_way"></textarea>
-          </div>
-
-          <div class="meal-cost">
-            <label>コスト</label>
-            <input type="number" placeholder="500" name="meal_cost">
-          </div>
-
-          <div class="meal-diffyculty">
-            <label>難易度</label>
-            <input type="radio"name="meal_diffyculty"value=1 checked> レベル1
-            <input type="radio"name="meal_diffyculty"value=2> レベル２
-            <input type="radio"name="meal_diffyculty"value=3> レベル3
-          </div>
-
-          <div class="meal-satiety">
-            <label>満腹度</label>
-            <input type="radio"name="meal_satiety"value=1 checked> ちょっと食べたい
-            <input type="radio"name="meal-satiety"value=2> ちょうどいい
-            <input type="radio"name="meal-satiety"value=3> がっつり
-          </div>
-
-          <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
-
-        </form>
-      </div>
-    </div>
-    <script src="js/front_form_validation.js"></script>
-    <script src="js/meal_card.js"></script>
-  </body>
-</html>
+<?php
+namespace App\Http\Requests;
+use Illuminate\Foundation\Http\FormRequest;
+class MealCreate extends FormRequest
+{
+  /**
+   * Determine if the user is authorized to make this request.
+   *
+   * @return bool
+   */
+  public function authorize()
+  {
+      return true;
+  }
+  /**
+   * Get the validation rules that apply to the request.
+   *
+   * @return array
+   */
+  public function rules()
+  {
+    return [
+      'meal_name' => 'required|max:50',
+      'meal_ingredients' => 'required|max:200',
+      'meal_way' => 'required|max:500',
+      'meal_cost' => 'required|integer',
+      'meal_diffyculty' => 'required',
+      'meal_satiety' => 'required',
+    ];
+  }
+  // public function messages()
+  // {
+  //     return [
+  //         '名前.required' => '料理名を入力してください。',
+  //     ];
+  // }
+}

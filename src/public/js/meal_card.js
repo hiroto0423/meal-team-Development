@@ -14,6 +14,7 @@ function callMealCteateApi() {
   const mealForm = document.getElementById('form');
   const formData = new FormData(mealForm);
   const obj = Object.fromEntries(formData);
+
   fetch(root_url + '/' + endPoint, {
     method: 'POST',
     headers: {
