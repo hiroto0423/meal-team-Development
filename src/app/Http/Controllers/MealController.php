@@ -41,6 +41,12 @@ class MealController extends Controller
       return response()->json($item);
     }
 
+    public function mealdelete(Meal $meal){
+        $meal->delete();
+        return response()->json();
+    }
+
+
     public function mealindex(){
       $items = DB::table('meals')->get();
       return response()->json($items);

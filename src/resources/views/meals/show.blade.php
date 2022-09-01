@@ -46,3 +46,4 @@
     </div>
 </body>
 <script src="../js/meal_read.js"></script>
+<script src='../js/meal_delete.js'></script>
