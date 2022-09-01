@@ -23,7 +23,9 @@ Route::get('/register',function(){
 Route::get('/meals',function(){
     return view('/meals/list');
 });
-Route::get('/meals/{meal}','MealController@show');
+Route::get('/meals/{meal}',function(){
+    return view('meals/show');
+});
 
 Route::get('/meals/{meal}/edit',function(){
     return view('/meals/edit');

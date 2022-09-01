@@ -33,7 +33,11 @@ class MealController extends Controller
     return response()->json($array);
   }
 
-  public function show(){
-      return view('meals/show');
-  }
+    public function mealread(Meal $meal){
+        $meal_id = $meal->id;
+        $item = \App\Meal::find($meal_id);
+         return response()->json($item);
+    }
+
+
 }
