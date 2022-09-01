@@ -29,3 +29,4 @@ Route::post('mealpost' ,'MealController@mealpost');
 Route::get('meals/{meal}','MealController@mealread');
 
 Route::get('mealindex','MealController@mealindex');
+Route::delete('deletemeal/{meal}','MealController@mealdelete');

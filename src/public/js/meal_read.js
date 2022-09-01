@@ -50,7 +50,7 @@ window.onload = function() {
 
         }).catch((error) => {
             console.log(error);
-            // window.location.href = root_url + '/register' ;
+            //window.location.href = root_url + '/register' ;
         });
 
 

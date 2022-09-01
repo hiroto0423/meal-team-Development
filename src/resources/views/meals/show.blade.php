@@ -44,6 +44,9 @@
                 <p id="meal_way"></p>
             </div>
         </div>
+        <button type="button"id="meal_delete">消去</button>
     </div>
+  <script src="../js/meal_read.js"></script>
+  <script src='../js/meal_delete.js'></script>
 </body>
-<script src="../js/meal_read.js"></script>
+
