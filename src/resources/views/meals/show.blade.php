@@ -35,8 +35,7 @@
             </div>
         </div>
         <div class="memo">
-            <!-- <img class="ao" src="/image/chicken.png" alt="" width="440" height="440"> -->
-            <div class="ao" width="440" height="440"></div>
+            <div id="meal_image_area"></div>
             <div class="memonoNakami">
                 <h2>材料メモ</h2>
                 <p id="meal_Ingredients_Memo"></p>

@@ -31,9 +31,10 @@ window.onload = function(){
       itemWrapper.setAttribute('id', 'item_wrapper-' + meal_id);
       var imageWrapper = document.createElement('div');imageWrapper.setAttribute('class', 'image-wrapper');
       imageWrapper.setAttribute('id', 'image_wrapper-' + meal_id);
-      var tmpImage = document.createElement('div');
-      tmpImage.setAttribute('class', 'tem-image');
-      tmpImage.setAttribute('id', 'tmp_image-' + meal_id);
+      var mealImage = document.createElement('div');
+      mealImage.setAttribute('class', 'meal-image');
+      mealImage.setAttribute('id', 'meal_image-' + meal_id);
+      mealImage.innerHTML = `<img src="${response[i].image}" width="100%" />`;
       var mealNameBlock = document.createElement('div');mealNameBlock.setAttribute('class', 'meal-name-block');
       mealNameBlock.setAttribute('id', 'meal_name_block-' + meal_id);
       var mealUrl = document.createElement('a');
@@ -45,7 +46,7 @@ window.onload = function(){
       document.getElementById('addListBox').appendChild(itemWrapper);
       document.getElementById('item_wrapper-' + meal_id).appendChild(imageWrapper);
       document.getElementById('item_wrapper-' + meal_id).appendChild(mealNameBlock);
-      document.getElementById('image_wrapper-' + meal_id).appendChild(tmpImage);
+      document.getElementById('image_wrapper-' + meal_id).appendChild(mealImage);
       document.getElementById('meal_name_block-' + meal_id).appendChild(mealUrl);
     }
   }).catch((error) => {

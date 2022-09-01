@@ -14,10 +14,12 @@ class MealController extends Controller
 
     $validated = $request;
 
+    // $request["meal_image"] = base64_encode(file_get_contents($request->image));
+
     // インサートと同時にIDを取得する
     $id = DB::table('meals')->insertGetId([
       'name' => $validated["meal_name"],
-      //'img' =>123,
+      'image' => $validated["meal_image"],
       'Ingredients_Memo' => $validated["meal_ingredients"],
       'way' => $validated["meal_way"],
       'cost' => $validated["meal_cost"],

@@ -13,7 +13,14 @@ const endPoint = 'api/mealpost';
 function callMealCteateApi() {
   const mealForm = document.getElementById('form');
   const formData = new FormData(mealForm);
+
+  // 画像をbase64形式にエンコードした文字列の取得
+  const base64_value = document.meal_form.meal_image;
+  // formData の meal_imageキーにbase64形式の値をセット
+  formData.set('meal_image', base64_value.innerText);
+
   const obj = Object.fromEntries(formData);
+  console.log(obj)
 
   fetch(root_url + '/' + endPoint, {
     method: 'POST',
@@ -30,7 +37,7 @@ function callMealCteateApi() {
         return response.json();
     }).then((response)  => {
       console.log('redirect');
-      window.location.href = root_url + '/meals/'+ response["meal_id"]  ;
+      window.location.href = root_url + '/meals/'+ response["meal_id"];
     }).catch((error) => {
         console.log(error);
     });

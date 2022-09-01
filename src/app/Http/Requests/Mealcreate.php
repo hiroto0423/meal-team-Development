@@ -21,6 +21,7 @@ class MealCreate extends FormRequest
   {
     return [
       'meal_name' => 'required|max:50',
+      'meal_image' => 'required',
       'meal_ingredients' => 'required|max:200',
       'meal_way' => 'required|max:500',
       'meal_cost' => 'required|integer',
