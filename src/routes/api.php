@@ -18,13 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('testpost' , 'TestController@index');
-    
-    
+
+
 Route::get('testget', function(){
-   return 1;
+  return 1;
 });
 
 Route::post('mealpost' ,'MealController@mealpost');
-Route::get('meal/{meal}','MealController@mealread');
-Route::delete('deletemeal/{meal}','MealController@mealdelete');
 
+Route::get('meals/{meal}','MealController@mealread');
+
+Route::get('mealindex','MealController@mealindex');
+Route::delete('deletemeal/{meal}','MealController@mealdelete');
+Route::put('editmeals/{meal}/edit','MealController@mealedit');
+Route::get('editmeals/{meal}/get','MealController@edit_meal_get');
