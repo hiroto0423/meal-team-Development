@@ -44,9 +44,27 @@ class MealController extends Controller
         return response()->json();
     }
     
-
     public function mealindex(){
       $items = DB::table('meals')->get();
       return response()->json($items);
+    }
+
+    public function mealedit (Request $request,Meal $meal){
+      DB::table('meals')->update([
+      'name' => $request["meal_name"],
+      //'img' =>123,
+      'Ingredients_Memo' => $request["meal_ingredients"],
+      'way' => $request["meal_way"],
+      'cost' => $request["meal_cost"],
+      //'categoly_id' => 1,
+      'difficulty' =>$request["meal_diffyculty"],
+      'satiety' => $request["meal_satiety"]
+    ]);
+      return response()->json();
+    }
+    public function edit_meal_get (Meal $meal){
+      $item = \App\Meal::find($meal->id);
+      //Log::debug($item);
+      return response()->json($item);
     }
 }
