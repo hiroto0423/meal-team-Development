@@ -21,11 +21,11 @@ Route::post('testpost' , 'TestController@index');
 
 
 Route::get('testget', function(){
-   return 1;
+  return 1;
 });
 
 Route::post('mealpost' ,'MealController@mealpost');
-Route::get('meal/{meal}','MealController@mealread');
 
+Route::get('meals/{meal}','MealController@mealread');
 
 Route::get('mealindex','MealController@mealindex');

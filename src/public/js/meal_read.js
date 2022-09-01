@@ -1,17 +1,21 @@
-const url = 'http://localhost:9000/';
-const endpoint_mealread ='api/meal/';
+// ルートURLの取得
+var root_url = location.protocol + '//' + location.hostname;
+if(!location.port == '') {
+  console.log('set url');
+  root_url = root_url + ':' + location.port
+}
 
+// エンドポイントの取得
+const endPoint ='api/meals';
 
 window.onload = function() {
-    var result = location.href.split('/');
-    var id = result[result.length - 1];    
-        fetch(url+endpoint_mealread + id, {
+
+    // http:// ~ /meals/xx xxの部分の取得
+    var param_id = location.pathname.split('/').pop();
+    console.log(root_url + '/' + endPoint + '/' + param_id)
+
+        fetch(root_url + '/' + endPoint + '/' + param_id, {
             method: 'GET',
-            // method: 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json'
-            // },
-            // body: JSON.stringify(id)
         }).then((response) => {
             if(!response.ok) {
                 console.log('Read error!');
@@ -19,7 +23,9 @@ window.onload = function() {
             } ;
             console.log('read ok');
             return response.json();
+            console.log(response.json())
         }).then((response)  => {
+
             //responseで返ってきたDBのレコードデータを取得
             var meal_name = response['name']
             var meal_Ingredients_Memo = response['Ingredients_Memo']
@@ -35,17 +41,17 @@ window.onload = function() {
             var meal_read_satiety = document.getElementById('meal_satiety');
             var meal_read_difficulty = document.getElementById('meal_difficulty');
              //HTMLの要素の中身を変更
-             meal_read_name.innerHTML = meal_name;
-             meal_read_Ingredients_Memo.innerHTML = meal_Ingredients_Memo;
+            meal_read_name.innerHTML = meal_name;
+            meal_read_Ingredients_Memo.innerHTML = meal_Ingredients_Memo;
             meal_read_way.innerHTML = meal_way;
             meal_read_cost.innerHTML = meal_cost;
             meal_read_satiety.innerHTML = meal_satiety;
-            meal_read_difficulty.innerHTML = meal_difficulty;                
+            meal_read_difficulty.innerHTML = meal_difficulty;
 
         }).catch((error) => {
             console.log(error);
-            window.location.href = url + 'register' ;
+            // window.location.href = root_url + '/register' ;
         });
 
-   
+
 }
