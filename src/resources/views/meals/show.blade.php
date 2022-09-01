@@ -25,7 +25,6 @@
         　</form>
     　     <div class="meal-name">
            <h2 id='meal_name'>料理名</h2>
-           <p></p>
           </div>
 
           <div class="meal-Ingredients_Memo">

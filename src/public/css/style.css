@@ -1,7 +1,6 @@
 body {
     margin : 0px;
     padding :0px;
-
 }
 
 
@@ -13,6 +12,7 @@ body {
 .header-list {
     float: right;
     padding: 20px;
+
 }
 .header-list button {
     font-size: 15px;
@@ -75,4 +75,32 @@ display: none;
     width : 150px;
     height: 50px;
     font-weight: bold;
+}
+/*料理詳細*/
+
+.meal-wrapper {
+    margin-top: 110px;
+}
+.name-block {
+    display: flex;
+    justify-content: space-around;
+}
+.infomation {
+    display: flex;
+}
+.orange_column {
+    margin: 0 18px;
+    text-align: center;
+}
+.meal-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+.memo {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 70px;
+}
+.memonoNakami {
+    width: 300px;
 }
