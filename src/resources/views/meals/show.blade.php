@@ -18,11 +18,6 @@
     　<div class="main">
     　  <div class="meal-detail">
           <button><a href="/">編集</a></button>
-        　<form action='/'id='' method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit">消去</button> 
-        　</form>
     　     <div class="meal-name">
            <h2 id='meal_name'>料理名</h2>
            <p></p>
@@ -51,10 +46,12 @@
             <div class="meal-satiety">
               <h2 id='meal_satiety'>満腹度</h2>
             </div>  
+            <button type="button"id="meal_delete">消去</button> 
     　  </div>
       </div>
       <div class="footer">
       </div>
       <script src='../js/meal_read.js'></script>
+      <script src='../js/meal_delete.js'></script>
     </body>
 </html>

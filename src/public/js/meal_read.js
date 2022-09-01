@@ -7,11 +7,6 @@ window.onload = function() {
     var id = result[result.length - 1];    
         fetch(url+endpoint_mealread + id, {
             method: 'GET',
-            // method: 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json'
-            // },
-            // body: JSON.stringify(id)
         }).then((response) => {
             if(!response.ok) {
                 console.log('Read error!');
@@ -44,7 +39,7 @@ window.onload = function() {
 
         }).catch((error) => {
             console.log(error);
-            window.location.href = url + 'register' ;
+            //window.location.href = url + 'register' ;
         });
 
    
