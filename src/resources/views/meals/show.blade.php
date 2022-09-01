@@ -32,6 +32,9 @@
                     <p>難易度</p>
                     <p id="meal_difficulty"></p>
                 </div>
+
+                <button type="button"id="meal_delete">消去</button>
+
             </div>
         </div>
         <div class="memo">
@@ -43,6 +46,7 @@
                 <p id="meal_way"></p>
             </div>
         </div>
+
     </div>
 </body>
 <script src="../js/meal_read.js"></script>

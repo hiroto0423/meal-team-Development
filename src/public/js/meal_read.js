@@ -12,7 +12,6 @@ window.onload = function() {
 
     // http:// ~ /meals/xx xxの部分の取得
     var param_id = location.pathname.split('/').pop();
-    console.log(root_url + '/' + endPoint + '/' + param_id)
 
         fetch(root_url + '/' + endPoint + '/' + param_id, {
             method: 'GET',
