@@ -18,8 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('testpost' , 'TestController@index');
-    
-    
+
+
 Route::get('testget', function(){
    return 1;
 });
@@ -27,3 +27,5 @@ Route::get('testget', function(){
 Route::post('mealpost' ,'MealController@mealpost');
 Route::get('meal/{meal}','MealController@mealread');
 
+
+Route::get('mealindex','MealController@mealindex');

@@ -104,3 +104,7 @@ display: none;
 .memonoNakami {
     width: 300px;
 }
+
+.meal-name {
+    display:block;
+}

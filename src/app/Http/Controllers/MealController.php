@@ -34,10 +34,13 @@ class MealController extends Controller
   }
 
     public function mealread(Meal $meal){
-        $meal_id = $meal->id;
-        $item = \App\Meal::find($meal_id);
-         return response()->json($item);
+      $meal_id = $meal->id;
+      $item = \App\Meal::find($meal_id);
+      return response()->json($item);
     }
 
-
+    public function mealindex(){
+      $items = DB::table('meals')->get();
+      return response()->json($items);
+    }
 }
