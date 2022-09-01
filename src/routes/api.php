@@ -26,4 +26,5 @@ Route::get('testget', function(){
 
 Route::post('mealpost' ,'MealController@mealpost');
 Route::get('meal/{meal}','MealController@mealread');
+Route::delete('deletemeal/{meal}','MealController@mealdelete');
 

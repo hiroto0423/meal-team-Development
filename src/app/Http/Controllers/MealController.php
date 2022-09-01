@@ -34,6 +34,11 @@ class MealController extends Controller
         $item = \App\Meal::find($meal_id);
          return response()->json($item);
     }
+
+    public function mealdelete(Meal $meal){
+        $meal->delete();
+        return response()->json();
+    }
     
 
 }
