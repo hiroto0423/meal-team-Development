@@ -16,13 +16,9 @@
       </div>
     </div>
       <div class="main">
+        <h1>料理編集</h1>
         <div class="meal-register">
           <form action="/register" method="PUT" id='form' name="meal_form">
-
-            <h1>料理編集</h1>
-
-            <!-- 画像投稿機能は後ほど実装します -->
-
             <div class="meal-name">
               <label>料理名</label>
               <input type="text" id='meal_name'placeholder="オムライス" name="meal_name">
@@ -30,9 +26,9 @@
 
             <div class="meal-img">
               <label>画像</label>
-              <input type="file" id="uploadImage" onchange="changeImageToBase64()">
-              <input type="hidden" id="base64text" name="meal_image">
-              <div id="uploadImageArea"></div>
+              <input type="file" accept="image/*" id="fileselect">
+              <input type="hidden" id="base64text"name="meal_image">
+              <img id="image">
             </div>
 
             <div class="meal-Ingredients_Memo">
@@ -64,12 +60,18 @@
               <input type="radio"name="meal_satiety"value=3> がっつり
             </div>
 
-            <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
-
+            <input type="button" value="変更する" class="postBtn" id="meal_create" name="btn_submit">
           </form>
+          <canvas
+            width="480"
+            height="320"
+            id="canvasresize"
+            style="visibility: hidden;"
+        ></canvas>
         </div>
       </div>
+      <script src="../../js/front_form_validation.js"></script>
       <script src="../../js/meal_edit.js"></script>
-      <script src="js/image_control.js"></script>
+      <script src="../../js/image_control.js"></script>
     </body>
 </html>

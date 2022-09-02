@@ -20,7 +20,6 @@ function callMealCteateApi() {
   formData.set('meal_image', base64_value.innerText);
 
   const obj = Object.fromEntries(formData);
-  console.log(obj)
 
   fetch(root_url + '/' + endPoint, {
     method: 'POST',

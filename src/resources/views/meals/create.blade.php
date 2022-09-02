@@ -16,11 +16,9 @@
       </div>
     </div>
       <div class="main">
+        <h1>料理登録</h1>
         <div class="meal-register">
           <form action="/register" method="POST" id='form' name="meal_form">
-
-            <h1>料理登録</h1>
-
             <div class="meal-name">
               <label>料理名</label>
               <input type="text" placeholder="オムライス" name="meal_name">
@@ -28,9 +26,9 @@
 
             <div class="meal-img">
               <label>画像</label>
-              <input type="file" id="uploadImage" onchange="changeImageToBase64()">
+              <input type="file" accept="image/*" id="fileselect">
               <input type="hidden" id="base64text" name="meal_image">
-              <div id="uploadImageArea"></div>
+              <img id="image">
             </div>
 
             <div class="meal-Ingredients_Memo">
@@ -58,14 +56,19 @@
             <div class="meal-satiety">
               <label>満腹度</label>
               <input type="radio"name="meal_satiety"value=1 checked> ちょっと食べたい
-              <input type="radio"name="meal-satiety"value=2> ちょうどいい
-              <input type="radio"name="meal-satiety"value=3> がっつり
+              <input type="radio"name="meal_satiety"value=2> ちょうどいい
+              <input type="radio"name="meal_satiety"value=3> がっつり
             </div>
 
             <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
-
           </form>
         </div>
+        <canvas
+                width="480"
+                height="320"
+                id="canvasresize"
+                style="visibility: hidden;"
+        ></canvas>
       </div>
       <script src="js/front_form_validation.js"></script>
       <script src="js/meal_card.js"></script>

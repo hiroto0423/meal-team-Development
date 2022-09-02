@@ -15,6 +15,9 @@ if(urlPathList.length > 3) {
 };
 
 window.onload = function(){
+
+  console.log('load meal_edit')
+
   fetch(root_url + '/api/editmeals/' + param_id +'/get',  {
     method: 'GET',
     }).then((response) => {
@@ -53,11 +56,11 @@ window.onload = function(){
 
       // 画像をbase64形式にエンコードした文字列を値に設定
       var meal_read_image = document.meal_form.meal_image
-      meal_read_image.innerHTML = response['image']
+      meal_read_image.value = response['image']
 
       // 画像のプレビュー
-      var imagePreviewArea = document.getElementById('uploadImageArea');
-      imagePreviewArea.innerHTML = `<img src="${response['image']}" width="100%" />`
+      var imagePreviewArea = document.getElementById('image');
+      imagePreviewArea.src = response['image']
 
     }).catch((error) => {
         console.log(error);
@@ -71,7 +74,7 @@ function callMealEdit() {
   // 画像をbase64形式にエンコードした文字列の取得
   const base64_value = document.meal_form.meal_image;
   // formData の meal_imageキーにbase64形式の値をセット
-  formData.set('meal_image', base64_value.innerText);
+  formData.set('meal_image', base64_value.value);
 
   const obj = Object.fromEntries(formData);
 
