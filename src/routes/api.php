@@ -21,3 +21,6 @@ Route::put('editmeals/{meal}/edit','MealController@mealedit');
 
 // delete
 Route::delete('deletemeal/{meal}','MealController@mealdelete');
+
+// random
+Route::get('random_meal','MealController@random_meal_get');

@@ -64,7 +64,12 @@ class MealController extends Controller
     }
     public function edit_meal_get (Meal $meal){
       $item = \App\Meal::find($meal->id);
-      //Log::debug($item);
+      return response()->json($item);
+    }
+
+    public function random_meal_get (Meal $meal){
+      //ランダムで１件取得
+      $item = \App\Meal::inRandomOrder()->take(1)->get();
       return response()->json($item);
     }
 }
