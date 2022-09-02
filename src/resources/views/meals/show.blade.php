@@ -32,9 +32,6 @@
                     <p>難易度</p>
                     <p id="meal_difficulty"></p>
                 </div>
-
-                <button type="button"id="meal_delete">消去</button>
-
             </div>
         </div>
         <div class="memo">
@@ -46,8 +43,14 @@
                 <p id="meal_way"></p>
             </div>
         </div>
-
+        <a id='edit_url'href="">編集</a>
+        <button type="button"id="meal_delete">消去</button>
     </div>
+  <script src="../js/meal_read.js"></script>
+  <script src='../js/meal_delete.js'></script>
+  <script>
+    var param_id = location.pathname.split('/').pop();
+    const mealUrl = document.getElementById('edit_url');
+    mealUrl.setAttribute('href', '/meals/' +param_id + '/edit');
+  </script>
 </body>
-<script src="../js/meal_read.js"></script>
-<script src='../js/meal_delete.js'></script>
