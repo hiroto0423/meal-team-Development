@@ -32,3 +32,4 @@ Route::get('mealindex','MealController@mealindex');
 Route::delete('deletemeal/{meal}','MealController@mealdelete');
 Route::put('editmeals/{meal}/edit','MealController@mealedit');
 Route::get('editmeals/{meal}/get','MealController@edit_meal_get');
+Route::get('random_meal','MealController@random_meal_get');
