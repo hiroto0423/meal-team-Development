@@ -1,14 +1,14 @@
 console.log('load validate')
 
 // フォームオブジェクト
-const btnStartValidate = document.meal_form.btn_submit
+// const btnStartValidate = document.meal_form.btn_submit
 const inputMealName    = document.meal_form.meal_name
 const inputMealImage   = document.meal_form.meal_image
 const inputIngredients = document.meal_form.meal_ingredients
 const inputWay         = document.meal_form.meal_way
 const inputCost        = document.meal_form.meal_cost
 
-btnStartValidate.addEventListener('click', function() {
+function formCreateAndUpdateValidation() {
   let errorMessages = [];
 
   // フォームの入力値チェック
@@ -49,6 +49,8 @@ btnStartValidate.addEventListener('click', function() {
 
   if(errorMessages.length > 0) {
     alert(errorMessages.join('\n'));   // バリデーションメッセージの表示
-    return;
+    return false;
+  } else{
+    return true;
   }
-})
+}

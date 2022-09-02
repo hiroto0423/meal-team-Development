@@ -67,7 +67,7 @@ window.onload = function(){
     });
 }
 
-function callMealEdit() {
+function callMealEditApi() {
   const mealForm = document.getElementById('form');
   const formData = new FormData(mealForm);
 
@@ -99,4 +99,9 @@ function callMealEdit() {
     });
 }
 
-btnSubmit.addEventListener('click', callMealEdit, false)
+function clickUpdateSubmit() {
+  const flag = formCreateAndUpdateValidation()
+  if(flag) {
+    callMealEditApi()
+  }
+}

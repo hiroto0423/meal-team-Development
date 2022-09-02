@@ -15,7 +15,7 @@ function callMealCteateApi() {
   const formData = new FormData(mealForm);
 
   // 画像をbase64形式にエンコードした文字列の取得
-  const base64_value = document.meal_form.meal_image.innerText;
+  const base64_value = document.meal_form.meal_image.value;
 
   // formData の meal_imageキーにbase64形式の値をセット
   formData.set('meal_image', base64_value);
@@ -43,4 +43,9 @@ function callMealCteateApi() {
     });
 }
 
-btnSubmit.addEventListener('click', callMealCteateApi, false)
+function clickCreateSubmit() {
+  const flag = formCreateAndUpdateValidation()
+  if(flag) {
+    callMealCteateApi()
+  }
+}

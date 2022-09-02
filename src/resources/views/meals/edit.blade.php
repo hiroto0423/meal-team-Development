@@ -60,7 +60,14 @@
               <input type="radio"name="meal_satiety"value=3> がっつり
             </div>
 
-            <input type="button" value="変更する" class="postBtn" id="meal_create" name="btn_submit">
+            <input
+              type="button"
+              value="変更する"
+              class="postBtn"
+              id="meal_create"
+              name="btn_submit"
+              onclick="clickUpdateSubmit()"
+            >
           </form>
           <canvas
             width="480"

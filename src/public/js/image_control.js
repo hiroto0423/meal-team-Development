@@ -25,7 +25,8 @@ function resizeAndEncode() {
     resizeimage(e.target.result,320,(v)=>{
       // リサイズした画像データURLのコールバック
       document.getElementById('image').src = v;
-      document.getElementById('base64text').innerHTML = v
+
+      document.getElementById('base64text').value = v;
     });
   }
   reader.readAsDataURL(fileselect.files[0]);

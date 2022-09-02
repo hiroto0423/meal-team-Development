@@ -60,7 +60,13 @@
               <input type="radio"name="meal_satiety"value=3> がっつり
             </div>
 
-            <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
+            <input
+              type="button"
+              value="登録する"
+              class="postBtn"
+              id="meal_create"
+              name="btn_submit"
+              onclick="clickCreateSubmit()">
           </form>
         </div>
         <canvas
@@ -71,7 +77,7 @@
         ></canvas>
       </div>
       <script src="js/front_form_validation.js"></script>
-      <script src="js/meal_card.js"></script>
+      <script src="js/meal_create.js"></script>
       <script src="js/image_control.js"></script>
     </body>
 </html>
