@@ -195,3 +195,9 @@ display: none;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
+/* 料理ランダム表示 */
+.random_meal_name{
+    display:block;
+    text-align: center;
+}
