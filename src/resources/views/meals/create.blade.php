@@ -21,8 +21,6 @@
 
             <h1>料理登録</h1>
 
-            <!-- 画像投稿機能は後ほど実装します -->
-
             <div class="meal-name">
               <label>料理名</label>
               <input type="text" placeholder="オムライス" name="meal_name">
@@ -88,6 +86,6 @@
         }
         reader.readAsDataURL(file)
       }
-    </script>
+      </script>
     </body>
 </html>

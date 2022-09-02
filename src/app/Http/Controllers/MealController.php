@@ -52,7 +52,7 @@ class MealController extends Controller
     public function mealedit (Request $request,Meal $meal){
       DB::table('meals')->update([
       'name' => $request["meal_name"],
-      //'img' =>123,
+      'image' => $request["meal_image"],
       'Ingredients_Memo' => $request["meal_ingredients"],
       'way' => $request["meal_way"],
       'cost' => $request["meal_cost"],
