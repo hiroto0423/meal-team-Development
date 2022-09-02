@@ -17,7 +17,7 @@ btnStartValidate.addEventListener('click', function() {
     errorMessages.push("料理名が未入力です。");
   }
 
-  if(inputMealImage.value == "") {
+  if(inputMealImage.innerText == "") {
     errorMessages.push("画像が選択されていません。")
   }
 
