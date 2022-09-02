@@ -34,8 +34,8 @@ body {
 #uploadImageArea {
   margin: 0 auto;
   border:2px solid gray;
-  width: 400px;
-  height: 300px;
+  width: 480px;
+  height: 320px;
 }
 
 .random-button button {

@@ -47,14 +47,12 @@ window.onload = function() {
             meal_read_satiety.innerHTML = meal_satiety;
             meal_read_difficulty.innerHTML = meal_difficulty;
 
-            // 画像を挿入
+            // 画像を挿入 幅 480px × 高さ 320px
             const meal_read_image = document.getElementById('meal_image_area');
-            meal_read_image.innerHTML = `<img src="${response['image']}" width="100%" />`
+            meal_read_image.innerHTML = `<img src="${response['image']}" width="480" height="320" />`
 
         }).catch((error) => {
             console.log(error);
             window.location.href = root_url + '/register' ;
         });
-
-
 }

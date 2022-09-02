@@ -69,23 +69,6 @@
       </div>
       <script src="js/front_form_validation.js"></script>
       <script src="js/meal_card.js"></script>
-
-      <script>
-      function changeImageToBase64() {
-        const uploadImage = document.querySelector('#uploadImage')
-        const file = uploadImage.files[0]
-
-        const reader = new FileReader()
-        reader.onload = (event) => {
-          const base64Text = event.currentTarget.result;
-          // const base64Text_nonMIME = event.currentTarget.result.split(',')[1];
-          console.log(base64Text);
-
-          document.querySelector('#base64text').innerHTML = base64Text;
-          document.querySelector('#uploadImageArea').innerHTML = `<img src="${base64Text}" width="100%" />`
-        }
-        reader.readAsDataURL(file)
-      }
-      </script>
+      <script src="js/image_control.js"></script>
     </body>
 </html>
