@@ -15,9 +15,10 @@ function callMealCteateApi() {
   const formData = new FormData(mealForm);
 
   // 画像をbase64形式にエンコードした文字列の取得
-  const base64_value = document.meal_form.meal_image;
+  const base64_value = document.meal_form.meal_image.innerText;
+
   // formData の meal_imageキーにbase64形式の値をセット
-  formData.set('meal_image', base64_value.innerText);
+  formData.set('meal_image', base64_value);
 
   const obj = Object.fromEntries(formData);
 
