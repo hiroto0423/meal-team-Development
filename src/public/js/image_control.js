@@ -19,13 +19,13 @@ function resizeimage(v, height, cb){
 
 // 画像ファイルが選択されると480 x 320pxにリサイズし、base64形式にエンコード
 function resizeAndEncode() {
+
   var reader = new FileReader();
 
   reader.onload = function (e) {
     resizeimage(e.target.result,320,(v)=>{
       // リサイズした画像データURLのコールバック
       document.getElementById('image').src = v;
-
       document.getElementById('base64text').value = v;
     });
   }
