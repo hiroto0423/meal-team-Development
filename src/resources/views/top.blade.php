@@ -18,12 +18,12 @@
     　<div class="main">
     　  <div class="random-button">
           <button id='random_button'>献立をランダムで表示する</button>
-        </div>  
+        </div>
         <a id='meal_name'class="random_meal_name"></a>
       </div>
       <div class="footer">
-          
+
       </div>
-      <script src='/js/meal_random.js'></script>
+      <script src='js/meal_random.js'></script>
     </body>
 </html>

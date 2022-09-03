@@ -17,10 +17,14 @@
     </div>
     <div class="main">
       <h1>レシピ一覧</h1>
+      <div class="random-button">
+          <button id='random_button'>献立をランダムで表示する</button>
+        </div>
       <div class="index-container" id="addListBox">
         <!-- ここにjs/meal_index.jsでfetchした料理一覧のデータが入る -->
       </div>
     </div>
       <script src="js/meal_index.js"></script>
+      <script src='js/meal_random.js'></script>
     </body>
 </html>

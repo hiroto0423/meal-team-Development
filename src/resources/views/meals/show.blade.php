@@ -45,9 +45,13 @@
         </div>
         <a id='edit_url'href="">編集</a>
         <button type="button"id="meal_delete">消去</button>
+        <div class="random-button">
+          <button id='random_button'>献立をランダムで表示する</button>
+        </div>
     </div>
   <script src="../js/meal_read.js"></script>
   <script src='../js/meal_delete.js'></script>
+  <script src='../js/meal_random.js'></script>
   <script>
     var param_id = location.pathname.split('/').pop();
     const mealUrl = document.getElementById('edit_url');
