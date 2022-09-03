@@ -17,6 +17,7 @@
     </div>
     <div class="main">
       <h1>レシピ一覧</h1>
+      <p id='error-message'></p>
       <div class="index-container" id="addListBox">
         <!-- ここにjs/meal_index.jsでfetchした料理一覧のデータが入る -->
       </div>
