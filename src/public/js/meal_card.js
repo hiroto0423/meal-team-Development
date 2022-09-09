@@ -1,47 +1,39 @@
-//const postMeal = document.querySelector('.postmeal');
-const postBtn = document.getElementById('meal_create');
-console.log(postBtn);
-const url = 'http://localhost:9000/';
-const endpoint = 'api/testpost';
-const endpoint_mealcreate ='api/mealpost';
-const endpoint_mealread ='api/mealread';
+const btnSubmit = document.meal_form.meal_create;
 
-const createMeal = () => {
-    const f1 = document.getElementById('form');
-    const fd = new FormData(f1)
-    const obj = Object.fromEntries(fd)
-    
-    fetch(url+endpoint_mealcreate, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(obj)
+// ルートURLの取得
+var root_url = location.protocol + '//' + location.hostname;
+if(!location.port == '') {
+  console.log('set url');
+  root_url = root_url + ':' + location.port
+}
+// エンドポイントの取得
+const endPoint = 'api/mealpost';
+
+// 料理登録API
+function callMealCteateApi() {
+  const mealForm = document.getElementById('form');
+  const formData = new FormData(mealForm);
+  const obj = Object.fromEntries(formData);
+
+  fetch(root_url + '/' + endPoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
     }).then((response) => {
         if(!response.ok) {
-            console.log('Create error!');
-            throw new Error('error');
+          console.log('Create error!');
+          throw new Error('error');
         } ;
         console.log('create ok');
         return response.json();
     }).then((response)  => {
-       window.location.href = url + 'meals/'+ response["meal_id"]  ;
-    }).catch((response) => {
+      console.log('redirect');
+      window.location.href = root_url + '/meals/'+ response["meal_id"]  ;
+    }).catch((error) => {
         console.log(error);
     });
-};
-
-postBtn.addEventListener('click', createMeal, false);
-
-
-const readMeal = () => {
-    
-    fetch(url+endpoint_mealread, {
-        
-    })
 }
 
-
-
-
-
+btnSubmit.addEventListener('click', callMealCteateApi, false)
