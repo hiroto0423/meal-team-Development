@@ -1,7 +1,6 @@
 body {
     margin : 0px;
     padding :0px;
-
 }
 
 
@@ -13,6 +12,7 @@ body {
 .header-list {
     float: right;
     padding: 20px;
+
 }
 .header-list button {
     font-size: 15px;
@@ -29,6 +29,13 @@ body {
 
 .main {
   margin-top: 100px;
+}
+
+#uploadImageArea {
+  margin: 0 auto;
+  border:2px solid gray;
+  width: 480px;
+  height: 320px;
 }
 
 .random-button button {
@@ -75,4 +82,129 @@ display: none;
     width : 150px;
     height: 50px;
     font-weight: bold;
+}
+/*料理詳細*/
+
+.meal-wrapper {
+    margin-top: 110px;
+}
+.name-block {
+    display: flex;
+    justify-content: space-around;
+}
+.infomation {
+    display: flex;
+}
+.orange_column {
+    margin: 0 18px;
+    text-align: center;
+}
+.meal-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+.memo {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 70px;
+}
+.memonoNakami {
+    width: 300px;
+}
+
+.meal-name {
+    display:block;
+}
+
+.main {
+  margin-top: 100px;
+}
+
+/*料理詳細*/
+
+.meal-wrapper {
+    margin-top: 110px;
+}
+.name-block {
+    display: flex;
+    justify-content: space-around;
+}
+.infomation {
+    display: flex;
+}
+.orange_column {
+    margin: 0 18px;
+    text-align: center;
+}
+.meal-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+.memo {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 70px;
+}
+.memonoNakami {
+    width: 300px;
+}
+
+/* 料理一覧 */
+
+/* 料理一覧 meal_list */
+
+.index-container {
+  height: 100%;
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.item-wrapper {
+  height: 100%;
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: aquamarine;
+}
+
+.image-wrapper {
+  height: 210px;
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.meal-name-block {
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#meal_url {
+  font-size: 32px;
+  color: black;
+  overflow-wrap: break-word;
+  text-decoration: none;
+}
+
+#meal_url:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* 料理ランダム表示 */
+.random_meal_name{
+    display:block;
+    text-align: center;
 }

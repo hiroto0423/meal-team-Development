@@ -16,15 +16,19 @@
       </div>
     </div>
       <div class="main">
+        <h1>料理登録</h1>
         <div class="meal-register">
           <form action="/register" method="POST" id='form' name="meal_form">
-            <h1>料理登録</h1>
-
-            <!-- 画像投稿機能は後ほど実装します -->
-
             <div class="meal-name">
               <label>料理名</label>
               <input type="text" placeholder="オムライス" name="meal_name">
+            </div>
+
+            <div class="meal-img">
+              <label>画像</label>
+              <input type="file" accept="image/*" id="fileselect">
+              <input type="hidden" id="base64text" name="meal_image">
+              <img id="image">
             </div>
 
             <div class="meal-Ingredients_Memo">
@@ -44,24 +48,36 @@
 
             <div class="meal-diffyculty">
               <label>難易度</label>
-              <input type="radio"name="難易度"value=1 checked> レベル1
-              <input type="radio"name="難易度"value=2> レベル２
-              <input type="radio"name="難易度"value=3> レベル3
+              <input type="radio"name="meal_diffyculty"value=1 checked> レベル1
+              <input type="radio"name="meal_diffyculty"value=2> レベル２
+              <input type="radio"name="meal_diffyculty"value=3> レベル3
             </div>
 
             <div class="meal-satiety">
               <label>満腹度</label>
-              <input type="radio"name="満足度"value=1 checked> ちょっと食べたい
-              <input type="radio"name="満足度"value=2> ちょうどいい
-              <input type="radio"name="満足度"value=3> がっつり
-
+              <input type="radio"name="meal_satiety"value=1 checked> ちょっと食べたい
+              <input type="radio"name="meal_satiety"value=2> ちょうどいい
+              <input type="radio"name="meal_satiety"value=3> がっつり
             </div>
 
-            <input type="button" value="登録する" class="postBtn" id="meal_create" name="btn_submit">
+            <input
+              type="button"
+              value="登録する"
+              class="postBtn"
+              id="meal_create"
+              name="btn_submit"
+              onclick="clickCreateSubmit()">
           </form>
         </div>
+        <canvas
+                width="480"
+                height="320"
+                id="canvasresize"
+                style="visibility: hidden;"
+        ></canvas>
       </div>
       <script src="js/front_form_validation.js"></script>
-      <script src="js/meal_card.js"></script>
+      <script src="js/meal_create.js"></script>
+      <script src="js/image_control.js"></script>
     </body>
 </html>

@@ -7,20 +7,24 @@
         <link rel="stylesheet" href="/css/style.css" >
     </head>
     <body>
-    　<div class="header">
-    　　<div class="header-logo">男の自炊アプリ</div>
-    　　<div class="header-list">
-　　      <button><a href="/register">レシピ登録</a></button>
-　　      <button><a href="/meals">料理一覧</a></button>
-　　      <button><a href="/categoly">カテゴリー</a></button>
-    　　</div>
-    　</div>
-    　<div class="main">
-    　   <h1>レシピ一覧</h1>
-    　  </div>
+    <div class="header">
+      <div class="header-logo">男の自炊アプリ</div>
+          <div class="header-list">
+            <button><a href="/register">レシピ登録</a></button>
+            <button><a href="/meals">料理一覧</a></button>
+            <button><a href="/categoly">カテゴリー</a></button>
       </div>
-      <div class="footer">
-          
+    </div>
+    <div class="main">
+      <h1>レシピ一覧</h1>
+      <div class="random-button">
+          <button id='random_button'>献立をランダムで表示する</button>
+        </div>
+      <div class="index-container" id="addListBox">
+        <!-- ここにjs/meal_index.jsでfetchした料理一覧のデータが入る -->
       </div>
+    </div>
+      <script src="js/meal_index.js"></script>
+      <script src='js/meal_random.js'></script>
     </body>
 </html>

@@ -17,32 +17,13 @@
     　</div>
     　<div class="main">
     　  <div class="random-button">
-          <button>献立をランダムで表示する</button>
-        </div>  
-        <div class="select-meal">
-          <h2>条件を絞り込む</h2>
-    　　　<div class="select-categoly">
-    　　　　<p>カテゴリー</p>
-        　<select class="select-categoly">
-        　　<option>選択してください</option>
-        　</select>
-          </div>
-          <div class="select-diffyculty">
-        　　<p>難易度</p>
-        　　<select class="select-diffyculty">
-              <option>選択してください</option>
-            </select>
-          </div>
-          <div class="select-satiety">
-            <p>満腹度</p>
-            <select class="select-satiety">
-              <option>選択してください</option>
-            </select>
-          </div>
+          <button id='random_button'>献立をランダムで表示する</button>
         </div>
+        <a id='meal_name'class="random_meal_name"></a>
       </div>
       <div class="footer">
-          
+
       </div>
+      <script src='js/meal_random.js'></script>
     </body>
 </html>
